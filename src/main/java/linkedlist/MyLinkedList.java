@@ -1,7 +1,7 @@
 package linkedlist;
 
 public class MyLinkedList<T extends Comparable<T>> {
-    Node head;
+    public Node head;
     Node tail;
     Node test;
     public void add(T data){
