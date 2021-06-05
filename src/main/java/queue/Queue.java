@@ -1,3 +1,5 @@
+package queue;
+
 import linkedlist.MyLinkedList;
 
 public class Queue<T extends Comparable<T>> {
