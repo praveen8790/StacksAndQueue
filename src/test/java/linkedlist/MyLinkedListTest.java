@@ -29,4 +29,15 @@ public class MyLinkedListTest extends TestCase {
 
     }
 
+    public void testInsert1() {
+        MyLinkedList linkedList = new MyLinkedList<>();
+        linkedList.add(56);
+        linkedList.add(70);
+        linkedList.insert(56,30);
+        int[] arr ={56,30,70};
+        for(int i=0;i>3;i++){
+            Assert.assertEquals(arr[i],linkedList.testCaseMethod());
+            linkedList.testCaseSetter();
+        }
+    }
 }
