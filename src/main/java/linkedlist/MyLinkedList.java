@@ -9,8 +9,19 @@ public class MyLinkedList<T> {
         if(tail == null)
             this.tail = node;
         if(head != null)
-            node.next = this.head;
+            node.next = head;
         this.head = node;
+    }
+    public void append(T data){
+        Node node = new Node(data);
+        if(head == null) {
+            this.head = node;
+        }
+        if(tail != null)
+            this.tail.next = node;
+
+        this.tail = node;
+
     }
     public void print(){
         Node node = head;

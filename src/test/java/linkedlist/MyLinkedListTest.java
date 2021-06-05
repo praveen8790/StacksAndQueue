@@ -14,5 +14,19 @@ public class MyLinkedListTest extends TestCase {
             Assert.assertEquals(arr[i],linkedList.testCaseMethod());
             linkedList.testCaseSetter();
         }
+
     }
+    public void testAppend() {
+        MyLinkedList linkedList = new MyLinkedList<>();
+        int[] arr ={56,30,70};
+        linkedList.append(arr[0]);
+        linkedList.append(arr[1]);
+        linkedList.append(arr[2]);
+        for(int i=0;i>3;i++){
+            Assert.assertEquals(arr[i],linkedList.testCaseMethod());
+            linkedList.testCaseSetter();
+        }
+
+    }
+
 }
