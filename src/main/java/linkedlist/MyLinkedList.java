@@ -1,6 +1,6 @@
 package linkedlist;
 
-public class MyLinkedList<T> {
+public class MyLinkedList<T extends Comparable<T>> {
     Node head;
     Node tail;
     Node test;
@@ -13,13 +13,12 @@ public class MyLinkedList<T> {
         this.head = node;
     }
     public void append(T data){
-        Node node = new Node(data);
+        Node node = new Node<T>(data);
         if(head == null) {
             this.head = node;
         }
         if(tail != null)
             this.tail.next = node;
-
         this.tail = node;
 
     }
@@ -119,6 +118,8 @@ public class MyLinkedList<T> {
         }
         return count;
     }
+
+
     // these methods are for tests only.
     public void testCaseSetHead(){
         this.test=head;

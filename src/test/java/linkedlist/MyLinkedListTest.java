@@ -3,6 +3,9 @@ package linkedlist;
 import junit.framework.TestCase;
 import org.junit.Assert;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class MyLinkedListTest extends TestCase {
     public void testAdd() {
         MyLinkedList linkedList = new MyLinkedList<>();
@@ -108,4 +111,21 @@ public class MyLinkedListTest extends TestCase {
         Assert.assertEquals(3,list.size());
     }
 
+    public void testSortedLinkedList() {
+        SortedLinkedList sortedLinkedList = new SortedLinkedList();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        arr.add(56);
+        arr.add(30);
+        arr.add(40);
+        arr.add(70);
+        arr.forEach(sortedLinkedList::sortedAdd);
+        arr.sort(Comparator.comparing(Integer::intValue));
+        sortedLinkedList.testCaseSetHead();
+        arr.forEach(number ->{
+            Assert.assertEquals(number,sortedLinkedList.testCaseMethod());
+            sortedLinkedList.testCaseSetter();
+                });
+
+
     }
+}
