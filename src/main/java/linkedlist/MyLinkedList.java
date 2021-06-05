@@ -82,6 +82,12 @@ public class MyLinkedList<T> {
         }
        return null;
     }
+    public boolean searchable(T data){
+        if(search(data).getData()==data)
+            return true;
+        else
+            return false;
+    }
     public void print(){
         Node node = head;
         while(node != null){

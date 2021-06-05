@@ -71,5 +71,13 @@ public class MyLinkedListTest extends TestCase {
         }
 
     }
+    public void testSearch() {
+        MyLinkedList list = new MyLinkedList<>();
+        int[] arr = {56, 30, 70};
+        list.append(arr[0]);
+        list.append(arr[1]);
+        list.append(arr[2]);
+        Assert.assertTrue(list.searchable(30));
+    }
 
 }
