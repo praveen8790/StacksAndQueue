@@ -56,11 +56,22 @@ public class MyLinkedList<T> {
     }
     public void deleteElementAtHead(){
         if (head == null)
-            System.out.println("LinkedList is Already Empty");
+            System.out.println("LinkedList is Empty");
         else {
             this.head = head.next;
+
         }
     }
+    public void deleteElementAtTail(){
+        Node search = head;
+        while(search.next != tail)
+        {
+            search = search.next;
+        }
+        this.tail=search;
+        search.next = null;
+        }
+
     public Node search(T data){
         Node search = head;
         while(search!=null)
@@ -79,13 +90,13 @@ public class MyLinkedList<T> {
         }
     }
     // these methods are for tests only.
+    public void testCaseSetHead(){
+        this.test=head;
+    }
     public void testCaseSetter(){
         this.test = test.next;
     }
     public T testCaseMethod(){
-        if (test == null) {
-            this.test = head;
-        }
         return (T) test.getData();
     }
 }
