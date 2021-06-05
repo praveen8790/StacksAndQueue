@@ -62,6 +62,20 @@ public class MyLinkedList<T> {
 
         }
     }
+    public void delete(T data){
+        Node delete = search(data);
+        if(delete == head)
+            deleteElementAtHead();
+        else if(delete == tail)
+            deleteElementAtTail();
+        else
+        {
+            Node temp = head;
+            while(temp.next != delete)
+                temp = temp.next;
+            temp.next=delete.next;
+        }
+    }
     public void deleteElementAtTail(){
         Node search = head;
         while(search.next != tail)
@@ -94,6 +108,16 @@ public class MyLinkedList<T> {
             System.out.println(node.getData());
             node = node.next;
         }
+    }
+    public int size(){
+        Node search = head;
+        int count=1;
+        while(search!=null)
+        {
+           count += 1;
+           search=search.next;
+        }
+        return count;
     }
     // these methods are for tests only.
     public void testCaseSetHead(){

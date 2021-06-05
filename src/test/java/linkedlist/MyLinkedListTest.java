@@ -93,4 +93,19 @@ public class MyLinkedListTest extends TestCase {
             linkedList.testCaseSetter();
         }
     }
-}
+    public void testDelete() {
+        MyLinkedList list = new MyLinkedList<>();
+        int[] arr = {56, 30, 40, 70};
+        for (int i = 0; i < 3; i++)
+            list.append(arr[i]);
+
+        list.delete(40);
+        list.testCaseSetHead();
+        for (int i = 0; i < 2; i++) {
+            Assert.assertEquals(arr[i], list.testCaseMethod());
+            list.testCaseSetter();
+        }
+        Assert.assertEquals(3,list.size());
+    }
+
+    }
