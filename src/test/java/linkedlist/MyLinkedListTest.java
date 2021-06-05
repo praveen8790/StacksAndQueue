@@ -80,4 +80,17 @@ public class MyLinkedListTest extends TestCase {
         Assert.assertTrue(list.searchable(30));
     }
 
+    public void testInsert2() {
+        MyLinkedList linkedList = new MyLinkedList<>();
+        linkedList.append(56);
+        linkedList.append(30);
+        linkedList.append(70);
+        linkedList.insert(30,40);
+        int[] arr ={56,30,40,70};
+        linkedList.testCaseSetHead();
+        for(int i=0;i<3;i++){
+            Assert.assertEquals(arr[i],linkedList.testCaseMethod());
+            linkedList.testCaseSetter();
+        }
+    }
 }
