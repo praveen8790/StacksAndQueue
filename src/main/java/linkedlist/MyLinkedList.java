@@ -23,7 +23,7 @@ public class MyLinkedList<T> {
         this.tail = node;
 
     }
-    public void insert(T searchelement,T newdata){
+   /* public void insert(T searchelement,T newdata){
         Node search = head;
         Node node = new Node(newdata);
         while(search != null){
@@ -41,6 +41,31 @@ public class MyLinkedList<T> {
             }
             search=search.next;
         }
+    }*/
+    public void insert(T searchelement,T newdata){
+        Node search = search(searchelement);
+        Node node = new Node(newdata);
+        if(search != tail){
+            node.next = search.next;
+            search.next = node;
+        }
+        else{ // to add at last of list
+            this.tail.next = node;
+            this.tail = node;
+        }
+    }
+    public void deleteElementAtHead(){
+
+    }
+    public Node search(T data){
+        Node search = head;
+        while(search!=null)
+        {
+            if(search.getData() == data)
+                return search;
+            search = search.next;
+        }
+       return null;
     }
     public void print(){
         Node node = head;
