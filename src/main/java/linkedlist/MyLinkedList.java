@@ -55,7 +55,11 @@ public class MyLinkedList<T> {
         }
     }
     public void deleteElementAtHead(){
-
+        if (head == null)
+            System.out.println("LinkedList is Already Empty");
+        else {
+            this.head = head.next;
+        }
     }
     public Node search(T data){
         Node search = head;
